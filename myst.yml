@@ -1,0 +1,26 @@
+# See docs at: https://mystmd.org/guide/frontmatter
+version: 1
+project:
+  id: a10dd656-1457-412f-bde1-43ce4ca34d72
+  title: Learn CLIMADA
+  description: Learning material for applied climate risk assessment with CLIMADA
+  # keywords: []
+  # authors: []
+  # github:
+  license:
+    content: CC-BY-4.0
+    code: GPL-3.0-or-later
+
+  # Table of Contents
+  toc:
+    - file: content/1_index.md
+    - title: Climate Risk Assessment
+      children:
+        - file: content/2_cra_intro.md
+        - file: content/2_cra_tutorial.ipynb
+
+site:
+  template: book-theme
+  # options:
+  #   favicon: favicon.ico
+  #   logo: site_logo.png
