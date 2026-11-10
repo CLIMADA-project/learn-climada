@@ -1,6 +1,6 @@
 # The CLIMADA Teaching Materials Collection
 
-This project collects all materials for learning climate risk assessment with CLIMADA and compiles them into an (interactive) [Jupyter Book](https://jupyterbook.org/).
+This project collects all materials for learning climate risk assessment with CLIMADA and compiles them into an [Jupyter Book](https://jupyterbook.org/).
 
 Main version rendered here: https://climada-project.github.io/learn-climada/
 
