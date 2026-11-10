@@ -3,10 +3,10 @@ name: Deploy PR previews
 on:
   pull_request:
     types:
-        - opened
-        - reopened
-        - synchronize
-        - closed  # To delete the preview
+      - opened
+      - reopened
+      - synchronize
+      - closed  # To delete the preview
 
 env:
   BASE_URL: /${{ github.event.repository.name }}
