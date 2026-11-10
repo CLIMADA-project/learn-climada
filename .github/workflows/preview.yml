@@ -1,0 +1,38 @@
+name: Deploy PR previews
+
+on:
+  pull_request:
+    types:
+        - opened
+        - reopened
+        - synchronize
+        - closed  # To delete the preview
+
+env:
+  BASE_URL: /${{ github.event.repository.name }}
+
+concurrency: preview-${{ github.ref }}
+
+jobs:
+  deploy-preview:
+    runs-on: ubuntu-latest
+    steps:
+      -
+        uses: actions/checkout@v7
+      -
+        uses: actions/setup-python@v7
+        with:
+          python-version: '3.13'
+          cache: 'pip' # caching pip dependencies
+      -
+        run: pip install -r requirements.txt
+      -
+        name: Build HTML Assets
+        run: jupyter book build --html
+      -
+        name: Deploy preview
+        uses: rossjrw/pr-preview-action@v1
+        with:
+            source-dir: _build/html
+            preview-branch: gh-pages
+            qr-code: false
