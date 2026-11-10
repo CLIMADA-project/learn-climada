@@ -6,7 +6,7 @@ project:
   description: Learning material for applied climate risk assessment with CLIMADA
   # keywords: []
   # authors: []
-  # github:
+  github: https://github.com/CLIMADA-project/learn-climada
   license:
     content: CC-BY-4.0
     code: GPL-3.0-or-later
@@ -21,6 +21,19 @@ project:
 
 site:
   template: book-theme
+
+  # Header center links
+  nav:
+    - title: CLIMADA
+      url: https://climada.ethz.ch/
+    - title: WCR
+      url: https://wcr.ethz.ch/
+
+  # Header top-right buttons
+  actions:
+    - title: CLIMADA
+      url: https://climada.ethz.ch/
+
   # options:
   #   favicon: favicon.ico
   #   logo: site_logo.png
