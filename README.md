@@ -6,29 +6,39 @@ Main version rendered here: https://climada-project.github.io/learn-climada/
 
 ## Build Instructions
 
-To build the book locally, follow these instructions (assuming you have Mamba installed):
+This assumes you are working with [uv](https://docs.astral.sh/uv/).
 
-1. Install Jupyter Book into a suitable environment:
+1. Sync your local environment:
 
-   ```
-   mamba install -n <my-env> "jupyter-book"
-   ```
-
-2. Enter the environment:
-
-   ```
-   mamba activate <my-env>
+   ```shell
+   uv sync
    ```
 
-3. Set up a local server hosting the book:
+2. Set up a local server hosting the book:
 
-   ```
-   jupyter book start
+   ```shell
+   uv run -- jupyter book start
    ```
 
 The URL to the server will be displayed. By default, it's `http://localhost:3000`.
 You can access the book via this URL with your browser.
 Any changes to the book source files will trigger a rebuild of the affected pages, automatically updating the output.
+
+### Building with Pip
+
+1. Use Conda or `venv` to activate a suitable, preferably pristine, environment.
+
+2. Install the requirements:
+
+   ```shell
+   pip install -r requirements.txt
+   ```
+
+3. Start the server:
+
+   ```shell
+   jupyter book start
+   ```
 
 ## Repository Structure
 
