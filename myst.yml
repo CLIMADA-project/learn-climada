@@ -24,16 +24,23 @@ site:
 
   # Header center links
   nav:
-    - title: CLIMADA
-      url: https://climada.ethz.ch/
-    - title: WCR
-      url: https://wcr.ethz.ch/
+    - title: CLIMADA Docs
+      url: https://climada-python.readthedocs.io/
+    - title: Repositories
+      children:
+        - title: CLIMADA Core
+          url: https://github.com/CLIMADA-project/climada_python
+        - title: CLIMADA Petals
+          url: https://github.com/CLIMADA-project/climada_petals
 
   # Header top-right buttons
-  actions:
-    - title: CLIMADA
-      url: https://climada.ethz.ch/
+  # actions:
+  #   - title: CLIMADA
+  #     url: https://climada.ethz.ch/
 
-  # options:
-  #   favicon: favicon.ico
-  #   logo: site_logo.png
+  parts:
+    primary_sidebar_footer: components/primary-sidebar-footer.md
+
+  options:
+    favicon: images/petals.ico
+    logo: images/logo.png
