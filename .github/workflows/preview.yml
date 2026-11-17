@@ -27,7 +27,7 @@ jobs:
         name: Build HTML Assets
         run: jupyter book build --html
         env:
-          BASE_PATH: /${{ github.event.repository.name }}/pr-preview/pr-${{ github.event.number }}/
+          BASE_URL: /${{ github.event.repository.name }}/pr-preview/pr-${{ github.event.number }}/
       -
         name: Deploy preview
         uses: rossjrw/pr-preview-action@v1
