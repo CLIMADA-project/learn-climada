@@ -7,6 +7,8 @@ env:
   # E.g., if your site lives at `https://mydomain.org/myproject`, set `BASE_URL=/myproject`.
   # If, instead, your site lives at the root of the domain, at `https://mydomain.org`, set `BASE_URL=''`.
   BASE_URL: /${{ github.event.repository.name }}
+  # pre-commit already checks that Lockfile is up-to-date
+  UV_FROZEN: "1"
 
 # Sets permissions of the GITHUB_TOKEN to allow deployment to GitHub Pages
 permissions:
@@ -18,15 +20,23 @@ jobs:
     # Recommended if you intend to make multiple deployments in quick succession.
     concurrency: ci-${{ github.ref }}
     steps:
-      - uses: actions/checkout@v7
-      - uses: actions/setup-python@v7
+      -
+        uses: actions/checkout@v7
+      -
+        name: Install uv
+        uses: astral-sh/setup-uv@68559e99cc807c1eb7e9238fd43a15bba460eec2 # v10.3.3
         with:
-          python-version: '3.13'
-          cache: 'pip' # caching pip dependencies
-      - run: pip install -r requirements.txt
-      - name: Build HTML Assets
-        run: jupyter book build --html
-      - name: Deploy 🚀
+          enable-cache: true
+          prune-cache: true
+      -
+        name: Install dependencies
+        run: |
+          uv sync
+      -
+        name: Build HTML Assets
+        run: uv run -- jupyter book build --html
+      -
+        name: Deploy 🚀
         uses: JamesIves/github-pages-deploy-action@v4
         with:
           folder: _build/html # The folder the action should deploy.
