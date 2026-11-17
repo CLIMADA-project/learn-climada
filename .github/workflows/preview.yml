@@ -8,9 +8,6 @@ on:
       - synchronize
       - closed  # To delete the preview
 
-env:
-  BASE_URL: /${{ github.event.repository.name }}
-
 concurrency: preview-${{ github.ref }}
 
 jobs:
@@ -29,6 +26,8 @@ jobs:
       -
         name: Build HTML Assets
         run: jupyter book build --html
+        env:
+          BASE_PATH: /${{ github.event.repository.name }}/pr-preview/pr-${{ github.event.number }}/
       -
         name: Deploy preview
         uses: rossjrw/pr-preview-action@v1
