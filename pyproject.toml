@@ -9,4 +9,5 @@ dependencies = [
     "jupyter-book>=2.1.7",
     "jupyterlab>=4.6.6",
     "jupyterlab-myst>=2.7.0",
+    "numpy>=2.5.5",
 ]
