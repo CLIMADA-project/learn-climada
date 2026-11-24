@@ -19,6 +19,11 @@ project:
         - file: content/2_cra_intro.md
         - file: content/2_cra_tutorial.ipynb
 
+  # In-page execution
+  jupyter:
+    binder:
+      ref: in-page-execution
+
 site:
   template: book-theme
 

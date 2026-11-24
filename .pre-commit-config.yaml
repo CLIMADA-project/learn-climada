@@ -15,6 +15,7 @@ repos:
     hooks:
       - id: uv-lock
       - id: uv-export
+        args: ["--no-hashes", "--frozen"]
 
   - repo: https://github.com/astral-sh/ruff-pre-commit
     # Ruff version.
@@ -27,3 +28,8 @@ repos:
       # Run the formatter.
       - id: ruff-format
         types_or: [ python, pyi, jupyter, markdown ]
+
+  - repo: https://github.com/kynan/nbstripout
+    rev: 0.9.2
+    hooks:
+      - id: nbstripout

@@ -4,7 +4,16 @@ version = "0.1.0"
 description = "Learning material for applied climate risk assessment with CLIMADA"
 license = "CC-BY-4.0 AND GPL-3.0-or-later"
 readme = "README.md"
-requires-python = ">=3.12"
+requires-python = ">=3.12,<3.14"
 dependencies = [
+    "bokeh>=3.10.2",
+    "climada",
     "jupyter-book>=2.1.7",
+    "jupyterlab>=4.6.6",
+    "jupyterlab-myst>=2.7.0",
+    "numpy>=2.5.5",
+    "pandas>=2.2",
 ]
+
+[tool.uv.sources]
+climada = { git = "https://github.com/CLIMADA-project/climada_python.git", rev = "add-uv-config" }
