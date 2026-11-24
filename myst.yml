@@ -24,8 +24,14 @@ site:
 
   # Header center links
   nav:
-    - title: CLIMADA Docs
-      url: https://climada-python.readthedocs.io/
+    - title: CLIMADA
+      url: https://climada.ethz.ch/
+    - title: Documentation
+      children:
+        - title: CLIMADA Core
+          url: https://climada-python.readthedocs.io/
+        - title: CLIMADA Petals
+          url: https://climada-petals.readthedocs.io/
     - title: Repositories
       children:
         - title: CLIMADA Core
@@ -40,6 +46,7 @@ site:
 
   parts:
     primary_sidebar_footer: components/primary-sidebar-footer.md
+    footer: components/footer.md
 
   options:
     favicon: images/petals.ico
